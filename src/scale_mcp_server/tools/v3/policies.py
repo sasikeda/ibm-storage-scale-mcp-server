@@ -58,8 +58,8 @@ async def test_policy(
     Returns:
         Dictionary containing policy test results
     """
-    await ctx.info(f"Tool called: test_policy with filesystem={filesystem}")
-    await ctx.debug(f"Testing policy for filesystem: {filesystem}")
+    await ctx.info(f"Tool called: test_policy with filesystem={filesystem}, test_only=true")
+    await ctx.debug(f"Testing policy for filesystem: {filesystem} (test_only=true, no changes will be applied)")
 
     try:
         policy_data = {"policy_contents": policy_contents}
@@ -96,8 +96,8 @@ async def update_policy(
     Returns:
         Dictionary containing policy update results
     """
-    await ctx.info(f"Tool called: update_policy with filesystem={filesystem}")
-    await ctx.debug(f"Updating policy for filesystem: {filesystem}")
+    await ctx.info(f"Tool called: update_policy with filesystem={filesystem}, test_only=false")
+    await ctx.debug(f"Updating policy for filesystem: {filesystem} (test_only=false, changes will be applied)")
 
     try:
         policy_data = {"policy_contents": policy_contents}
