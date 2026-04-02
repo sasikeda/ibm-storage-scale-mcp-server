@@ -54,9 +54,19 @@ Model Context Protocol (MCP) server for interacting with IBM Storage Scale.
    
    [domain]
    domain = your-domain
+
+   [ssh]
+   # SSH connection settings for remote CLI commands
+   hostname = your-scale-node.example.com
+   port = 22
+   username = your-username
+   password = your-ssh-password
+   key_path = your-ssh-key  # Alternative to password authentication
    ```
-   
+
    Replace the placeholder values with your actual Scale cluster credentials and connection details.
+
+   **Note:** The `[ssh]` section is required for CLI-based tools that execute commands directly on Scale nodes (such as policy operations). You can use either password or SSH key authentication (precedence over password authentication).
 
 3. **Start the server using uv or python**:
    ```bash
